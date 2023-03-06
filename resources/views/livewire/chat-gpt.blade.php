@@ -34,7 +34,7 @@
                 <form wire:submit.prevent="send_message" class="py-5">
                     @csrf
                     <label for="message" class="mb-2"><h5>Your Question:</h5></label>
-                    <textarea wire:model.defer="message" id="message" name="message" id="" class="form-control"></textarea>
+                    <textarea wire:keydown.enter="send_message" wire:model.defer="message" id="message" name="message" id="" class="form-control"></textarea>
                     <input type="submit" class="btn btn-primary mt-3" value="Send">
                     {{-- <input id="message" type="text"  autocomplete="off" class="" /> --}}
                     <a class="btn btn-danger mt-3" wire:click="reset_chat">Reset Conversation</a>
